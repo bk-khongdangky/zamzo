@@ -1,0 +1,130 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "nsfw"
+theme = "mmm"
+
+enableEmoji = true
+# section name automatic to menu
+# sectionPagesMenu = "main"
+# footnotes return link
+footnoteReturnLinkContents = "↩"
+footnoteAnchorPrefix = "fn"
+# chuyển list title về số ít (bỏ s)
+pluralizeListTitles = false
+# remove accent mark (loại bỏ dấu tiếng việt cho url)
+removePathAccents = true
+# số bài hiển thị trên 1 trang
+paginate = 6
+# giữ nguyên dấu tiếng việt cho taxonomy name
+# preserveTaxonomyNames = true
+# setting to use built-in code highlight
+# pygmentsCodefences = true
+# pygmentsUseClasses = true
+# pygmentsOptions = "linenos=table"
+
+# [outputs]
+#   home = ["HTML","RSS","JSON"]
+
+[params]
+  author = "khongdangky"
+  description = "this is my only blog, I have never write and post anywhere else"
+  tagline = "everything not art must be porn"
+# googlefont = "https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,700,700i&display=swap&subset=latin-ext,vietnamese"
+# googlefont = "https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap&subset=latin-ext,vietnamese"
+  googlefont = "https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600,600i&display=swap&subset=latin-ext,vietnamese"
+
+# uncomment below line to enable tracking post date with git
+# enableGitInfo = true
+# replace below line in [frontmatter]
+# lastmod = [":fileModTime", ":git", ":default"]
+[frontmatter]
+  date  = [":default", ":filename"]
+  lastmod = [":fileModTime", ":default"]
+
+[permalinks]
+  blog = ":section/:year/:month/:slug/"
+  insp = ":sections/:slug/"
+# home page menu
+[[menu.home]]
+  name = "home"
+  weight = 1
+  url = "/"
+
+# main page menu
+[[menu.main]]
+  name = "home"
+  weight = 1
+  url = "/"
+[[menu.main]]
+  name = "tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "categories"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+
+
+
+[[menu.footer]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.footer]]
+  name = "Categories"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+[[menu.footer]]
+  name = "Emoji"
+  weight = 40
+  identifier = "emoticon"
+  url = "https://www.webfx.com/tools/emoji-cheat-sheet/"
+
+# config cho hugo lấy các bài liên quan (single post)
+[related]
+threshold = 80.0
+includeNewer = true
+toLower = false
+
+  [[related.indices]]
+  name = "categories"
+  weight = 100.0
+
+  [[related.indices]]
+  name = "tags"
+  weight = 100.0
+
+  [[related.indices]]
+  name = "date"
+  weight = 10.0
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[imaging]
+# better but slower resize quality
+resampleFilter = "lanczos"
+# Better JPEG quality setting. Default is 75.
+quality = 85
+# Default background color. 
+# Hugo will preserve transparency for target formats that supports it,
+# but will fall back to this color for JPEG.
+bgColor = "#ffffff"
+
+# Use hugo module to mount content from local folder
+# Change below source to your content path (relate to your hugo folder)
+# you can even use your github/gitlab repositories
+[module]
+[[module.mounts]]
+source = "../content/blog"
+target = "content/content-primary"
+[[module.mounts]]
+source = "../content/insp"
+target = "content/content-secondary"
+

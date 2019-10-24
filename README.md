@@ -57,3 +57,9 @@ content files/folders should look like this
 The `content-primary` mount point is for primary content section *(eg. blog)*. Your post should have a `cover.jpg` (or `.png`) within post folder. This image would be your post cover image.
 
 The `content-secondary` mount point is for secondary content section *(eg. collective)*. You don't need `cover.*` image. It uses the first image in folder for post cover.
+
+## preview
+
+![](https://res.cloudinary.com/khongdangky/image/upload/v1571914352/blog/nghichngom/home1_osppov.jpg)
+
+![](https://res.cloudinary.com/khongdangky/image/upload/v1571914352/blog/nghichngom/page1_vv6qyy.jpg)

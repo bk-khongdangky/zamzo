@@ -1,5 +1,17 @@
 # zam
-hugo theme for photo gallery using hugo module for adding content
+hugo theme for photo gallery
+
+---
+
+## about this theme
+
+- require hugo 0.58 or later
+- use hugo module to mount content into site
+- best for photo gallry site/blog
+- fixed entry text width
+- almost setting predefined in config.toml
+
+---
 
 ## how to use
 
@@ -30,7 +42,7 @@ use page bundle for your content, see https://gohugo.io/content-management/page-
 
 content files/folders should look like this
 
-```
+```txt
 .
 └── gallery # mount this folder into hugo eg. content/content-primary
     |
@@ -58,8 +70,25 @@ The `content-primary` mount point is for primary content section *(eg. blog)*. Y
 
 The `content-secondary` mount point is for secondary content section *(eg. collective)*. You don't need `cover.*` image. It uses the first image in folder for post cover.
 
+---
+
 ## preview
+
+### home page
 
 ![](https://res.cloudinary.com/khongdangky/image/upload/v1571914352/blog/nghichngom/home1_osppov.jpg)
 
+### primary content list style
+
 ![](https://res.cloudinary.com/khongdangky/image/upload/v1571914352/blog/nghichngom/page1_vv6qyy.jpg)
+
+---
+
+## future plan
+
+- define image size on config file
+- slideshow for gallery photo with some predefine layout
+- google analytic
+- collapsable section for disqus
+- share button (facebook, twitter, pinterest)
+- shortcode to insert image

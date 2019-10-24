@@ -1,0 +1,74 @@
+@import "reset";
+
+$f: 'IBM Plex Mono', monospace;
+
+$hg: 1500px;
+
+html {
+    font: 18px/1.5 $f;
+}
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: tomato;
+    &:hover {
+        color: teal;
+    }
+}
+
+@mixin flex($v: center, $h: center) {
+	display: flex;
+	justify-content: $v;
+	align-items: $h;
+}
+
+// section
+.section-secondary {
+	flex-flow: column;
+	@include flex(flex-end,center);
+}
+.center {
+    text-align: center;
+}
+.tag-line {
+    padding: 2rem 3rem 5rem;
+    border-top: 1px solid black;
+}
+.container {
+    margin: 0 auto;
+    @media screen and (min-width:$hg) {
+        max-width: 1360px;
+    }
+}
+.smore {
+    @include flex();
+    border-bottom: 1px solid black;
+    width: 5rem;
+    height: 5rem;
+    margin-top: 2rem;
+}
+.term-list {
+    padding: 0 5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .term-item {
+        padding: 0.5rem;
+    }
+}
+
+
+@import "header";
+@import "home-cover";
+@import "cover";
+@import "section-list";
+@import "pagination";
+@import "single";
+@import "cover-single";
+@import "entry";
+
+// footer
+.footer-content {
+    padding: 0 0 10rem;
+    color: #555;
+}

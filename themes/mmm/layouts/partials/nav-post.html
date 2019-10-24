@@ -1,0 +1,22 @@
+<div class="container">
+    <ul class="pagination">
+
+        <li class="page-item page-nxt">
+            {{ with .PrevInSection }}
+            <a class="page-link" href="{{ .RelPermalink }}">&larr; {{ .Title }}</a>
+            {{ else }}
+            <a class="page-link" href="#">/end/</a>
+            {{end}}
+        </li>
+
+        <li class="spr">(&middot;)(&middot;)</li>
+
+        <li class="page-item page-prv">
+            {{ with .NextInSection }}
+            <a class="page-link" href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>
+            {{ else }}
+            <a class="page-link" href="#">/end/</a>
+            {{end}}
+        </li>
+    </ul>
+</div>

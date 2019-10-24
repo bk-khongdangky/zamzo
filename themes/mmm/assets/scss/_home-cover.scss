@@ -1,0 +1,64 @@
+.home-cover {
+    background: rgba(black,0.5);
+    // min-height: 100vh;
+    height: 100%; // not flickering on ipad
+    position: relative; // contain absolute post cover as background
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    .container, .post-nxt {
+
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+        transition: all 1s ease; // smoothly disapear
+    }
+    a {
+        color: white;
+    }
+    .latest {
+        width: 100%;
+        padding: 1rem;
+        .post-title {
+            font-size: 3rem;
+            line-height: 1.1;
+        }
+        .latest-txt {
+            color: white;
+        }
+        @media (min-width:$hg) {
+            padding: 0;
+        }
+    }
+    .post-cover {
+        z-index: -1;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .post-nxt {
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        margin-top: 3rem;
+        width: 100%;
+        display: flex;
+        .post-nxt-item {
+            flex: 1 1 auto;
+            text-align: center;
+            padding: 5rem 1rem;
+            border-left: 1px solid white;
+            &:first-of-type {
+                border: none;
+            }
+        }
+    }
+    .blog-more {
+        padding: 2rem 0;
+        font-size: 0.8rem;
+    }
+}

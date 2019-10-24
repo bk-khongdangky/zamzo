@@ -1,0 +1,21 @@
+{{ if .IsHome }}
+
+<nav id="fixnav" class="site-nav nav-home">
+    <ul>
+        {{ range .Site.Menus.home }}
+        <li><a href="{{ .URL | absURL | safeURL }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+</nav>
+
+{{ else }}
+
+<nav class="site-nav nav-default">
+    <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | absURL | safeURL }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+</nav>
+
+{{ end }}

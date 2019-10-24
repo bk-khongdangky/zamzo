@@ -1,0 +1,37 @@
+
+.paginate-top, .paginate-bottom {
+    @include flex();
+    ul {
+        padding: 1rem 2rem;
+    }
+}
+.paginate-top ul {
+    border-top: 1px solid black;
+}
+.paginate-bottom ul {
+    border-bottom: 1px solid black;
+}
+/*ul*/.pagination {
+    @include flex();
+    /*li*/.page-item {
+        /*a*/.page-link {
+            display: block;
+            color: black;
+            padding: 0.5rem;
+        }
+    }
+    /*li*/.page-nxt, .page-prv {
+        flex: 1 1 30%;
+        padding: 0;
+        // min-width: 10ch;
+    }
+    .spr {
+        flex: 0 0  10ch;
+        border-bottom: 1px solid black;
+        padding: 2rem 0;
+        text-align: center;
+    }
+    .page-prv {
+        text-align: right;
+    }
+}

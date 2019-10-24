@@ -1,0 +1,11 @@
+{{ define "primary" }}
+
+<section class="section-primary">
+    <div class="container">
+        {{ range .Pages }}
+        {{ partial "cover-image-default.html" . }}
+        {{ end }}
+    </div>
+</section>
+
+{{ end }}

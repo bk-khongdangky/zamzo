@@ -1,0 +1,27 @@
+
+//padding for single content on desktop
+.bigpad {
+	padding: 5rem 0;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	@media(min-width: $hg) {
+		padding: 10rem 0;
+	}
+}
+// temporary for insp section
+.single-secondary {
+	flex-flow: column;
+	@include flex();
+	.insp-src-image {
+		width: 100%;
+		height: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.image-title {
+			display: none; // temporary hide, title lenght are variable
+		}
+	}
+}

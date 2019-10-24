@@ -1,0 +1,32 @@
+header {
+    position: relative;
+    /*nav*/.site-nav {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        ul {
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            padding: 0 1rem;
+            a {
+                display: block;
+                padding: 1rem;
+            }
+        }
+    }
+    .nav-home {
+        position: fixed;
+        left: 0; right: 0;
+        z-index: 1;
+        transition: all 1s ease;
+        ul {
+            border-color: white;
+        }
+        ul a {
+            color: white;
+        }
+    }
+}

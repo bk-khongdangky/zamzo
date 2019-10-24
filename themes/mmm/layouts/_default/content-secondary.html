@@ -1,0 +1,28 @@
+{{ define "header" }}
+<nav class="site-nav nav-default">
+    <ul>
+        {{ range .Site.Menus.home }}
+        <li><a href="{{ .URL | absURL | safeURL }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+</nav>
+{{ end }}
+
+{{ define "primary" }}
+
+<section>
+    {{ partial "vs100.html" . }}
+    {{ with .Site.Params.tagline }}<div class="center tag-line">{{ . }}</div>{{ end }}
+
+
+    <div class="container">
+        <div class="insp-list">
+            {{ range .Pages }}
+            {{ partial "cover-image-default.html" . }}
+            {{ end }}
+        </div>
+    </div>
+
+</section>
+
+{{ end }}

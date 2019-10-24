@@ -1,0 +1,100 @@
+
+// mixin
+@mixin coverimage($p:0) {
+	.cover-image {
+		width: 100%;
+		height: 100%;
+		padding: $p;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.cover-image-default {
+		width: 100%;
+		height: 100%;
+		padding: $p;
+		img {
+			filter: grayscale(100%) brightness(0.5);
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border: 1px solid #ccc;
+		}
+	}
+}
+
+/*
+@mixin covertitle($a:3rem,$b:1px,$c:white) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	a {
+		display: block;
+		padding: $a;
+		border: $b solid $c;
+	}
+}
+*/
+
+@mixin covertitle-j($p:3rem,$j:flex-start) {
+	padding: $p;
+	display: flex;
+	justify-content: $j;
+	align-items: center;
+}
+
+// insp section
+
+.insp-list .cover {
+	@include coverimage();
+	// position: relative;
+	.cover-title {
+		padding-top: 1rem;
+		text-align: center;
+		// position: absolute;
+		// top: 0; left: 0; right: 0; bottom: 0;
+		@include flex();
+		a {
+			display: block;
+			width: 100%;
+		}
+	}
+	img {
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    	filter: grayscale(100%);
+	}
+}
+
+// blog section
+
+.blog-list .cover {
+	display: flex;
+	flex-direction: row;
+	@include coverimage();
+	.cover-image, .cover-image-default {
+		flex: 0 1 50%;
+		background: #555;
+	}
+	.cover-title {
+		flex: 0 1 50%;
+		// padding-right: 3rem; // need improve
+		@include covertitle-j();
+		// border: 1px solid red;
+	}
+	&:nth-of-type(2n) {
+		flex-direction: row-reverse;
+		.cover-title {
+			// padding-right: 0;
+			// padding-left: 3rem // need improve
+			@include covertitle-j(3rem,flex-end);
+			text-align: right;
+		}
+	}
+	a {
+		color: black;
+		display: block;
+		width:50%;
+	}
+}

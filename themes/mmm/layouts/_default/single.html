@@ -1,0 +1,48 @@
+
+
+{{ define "primary" }}
+{{ partial "vs100.html" . }}
+<div class="container">
+    <div class="center single-title">
+        <h2>{{ .Title }}</h2>
+    </div>
+    {{ partial "cover-image-single.html" . }}
+</div>
+{{ with .Content }}
+{{ partial "vs100.html" . }}
+<div class="single-primary">
+    <div class="container">
+        <div class="entry bigpad">
+            {{ . }}
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ partial "nav-post.html" . }}
+{{ end }}
+
+{{ define "secondary" }}
+<section class="single-secondary">
+    {{ partial "vs100.html" . }}
+    <div class="container bigpad">
+        {{ with .Resources.ByType "image" }}
+        <div class="insp-list">
+            {{ $images := . }}
+            {{ $cover := slice (.GetMatch "cover.*") }}
+            {{ $display := $images | complement $cover }}
+            {{ range $display }}
+            <div class="insp-src-image">
+                <a href="{{ .RelPermalink }}">
+                    {{ $i := .Fill "500x500 center" }}
+                    {{ with $i }}
+                    <img src="{{ .Permalink }}" alt="{{ .Title }}" />
+                    <p class="image-title">{{ .Title }}</p>
+                    {{ end }}
+                </a>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

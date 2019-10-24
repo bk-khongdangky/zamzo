@@ -1,0 +1,17 @@
+{{/* list all taga or categories */}}
+
+
+{{ define "primary" }}
+	{{ partial "vs100.html" . }}
+
+	<main class="container bigpad">
+		<div class="term-list">
+		{{ range .Data.Terms.Alphabetical }}
+			<div class="term-item"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a><sup>({{ .Count }})</sup>
+			</div>
+		{{ end }}
+		</div>
+	</main>
+
+{{ end }}
+

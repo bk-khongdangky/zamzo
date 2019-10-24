@@ -1,0 +1,18 @@
+<div class="cover">
+	<a href="{{ .RelPermalink }}">
+    {{ with .Resources.GetMatch "cover.*" }}
+    <!-- {{/* $cover := .Fill "500x500" | images.Filter (images.Grayscale) */}} -->
+    {{ $cover := .Fill "640x640" }}
+        {{ with $cover }}
+        <div class="cover-image"><img src="{{ .Permalink }}" alt="{{ .Title }}" /></div>
+        {{ end }}
+    {{ else }}
+    <div class="cover-image-default">
+        <img
+            src="/images/default-cover.jpeg"
+            alt="{{ .Title }}" />
+    </div>
+    {{ end }}
+	</a>
+    <div class="cover-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+</div>

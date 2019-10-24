@@ -1,0 +1,15 @@
+<div class="single-cover">
+    {{ with .Resources.GetMatch "cover.*" }}
+    <!-- {{/* $cover := .Fill "500x500" | images.Filter (images.Grayscale) */}} -->
+    {{ $cover := .Fill "1200x600 center" }}
+        {{ with $cover }}
+        <div class="cover-image"><img src="{{ .Permalink }}" alt="{{ .Title }}" /></div>
+        {{ end }}
+    {{ else }}
+    <div class="cover-image-default">
+        <img
+            src="/images/default-cover.jpeg"
+            alt="{{ .Title }}" />
+    </div>
+    {{ end }}
+</div>

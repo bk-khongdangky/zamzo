@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+{{ partial "head.html" . }}
+
+<body>
+    <header>
+        {{ block "header" . }}
+        {{ partial "default-header.html" . }}
+        {{ end }}
+    </header>
+
+    <main>
+        {{ block "primary" . }}{{ end }}
+        {{ block "secondary" . }}{{ end }}
+        {{ block "tertiary" . }}{{ end }}
+    </main>
+
+    <footer>
+        {{ block "footer" . }}
+        {{ partial "vs200.html" . }}
+        {{ partial "default-footer.html" . }}
+        {{ end }}
+    </footer>
+{{ block "script" . }}{{ end }}
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+{{ define "primary" }}
+
+<section class="section-primary">
+{{ partial "cover-home.html" . }}
+</section>
+
+{{ end }}
+
+{{ define "secondary" }}
+{{ partial "vs200.html" . }}
+<section class="section-secondary">
+    {{ with .Site.Params.tagline }}<div class="center tag-line">{{ . }}</div>{{ end }}
+    <div class="container">
+        <div class="insp-list">
+            {{ $p := first 6 (where site.RegularPages "Section" "content-secondary") }}
+            {{ range $p }}
+            {{ partial "cover-image-default.html" . }}
+            {{ end }}
+        </div>
+    </div>
+    <div class="center smore"><a href="/content-secondary/">more</a></div>
+</section>
+{{ end }}
+
+{{ define "script" }}
+
+<script>
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("fixnav").style.opacity = "0";
+            document.getElementById("hh1").style.opacity = "0";
+            document.getElementById("hh2").style.opacity = "0";
+        } else {
+            document.getElementById("fixnav").style.opacity = "1";
+            document.getElementById("hh1").style.opacity = "1";
+            document.getElementById("hh2").style.opacity = "1";
+        }
+    }
+
+function calcVH() {
+  var vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  document.getElementById("100vh").setAttribute("style", "height:" + vH + "px;");
+}
+calcVH();
+window.addEventListener('onorientationchange', calcVH, true);
+</script>
+
+
+
+{{ end }}

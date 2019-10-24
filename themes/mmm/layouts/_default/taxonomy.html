@@ -1,0 +1,34 @@
+{{/* List post in a tag/category */}}
+
+
+{{ define "primary"}}
+	{{ partial "vs100.html" . }}
+
+	{{ if eq .Data.Plural "tags" }}
+	<h2 class="center entry-title">tag: {{ .Title }}</h2>
+	{{ else if eq .Data.Plural "categories" }}
+	<h2 class="center entry-title">category: {{ .Title }}</h2>
+	{{ end }}
+	
+	<section>
+		{{ partial "vs100.html" . }}
+		<div class="paginate-top">
+			{{ template "_internal/pagination.html" . }}
+		</div>
+		<div class="container bigpad">
+			<div class="insp-list">
+				{{ range .Paginator.Pages }}
+				{{ partial "cover-image-default.html" . }}
+				{{ end }}
+			</div>
+		</div>
+		<div class="paginate-bottom">
+			{{ template "_internal/pagination.html" . }}
+		</div>
+	</section>
+
+{{ end }}
+
+{{ define "nav-bottom" }}
+{{ partial "pagination.html" . }}
+{{ end }}

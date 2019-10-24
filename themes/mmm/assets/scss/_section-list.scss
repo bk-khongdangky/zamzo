@@ -1,0 +1,15 @@
+
+.insp-list {
+    text-align: center;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    grid-gap: 2rem; // for displaying on ios browser
+    @media (min-width: $hg) {
+        padding: 0;
+        gap: 5rem;
+    }
+}
+
+// .blog-list {}

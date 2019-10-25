@@ -17,20 +17,11 @@ hugo theme for photo gallery
 
 step 1: folk this to your local computer
 
-step 2: edit `config.toml` (below is mine, you should change to your own source)
-
-```toml
-# Use hugo module to mount content from local folder
-# Change below source to your content path (relate to your hugo folder)
-# you can even use your github/gitlab repositories
-[module]
-[[module.mounts]]
-source = "../content/blog"
-target = "content/content-primary"
-[[module.mounts]]
-source = "../content/insp"
-target = "content/content-secondary"
+```shell
+git clone https://github.com/chuadangky/zam.git
 ```
+
+step 2: `cd` into downloaded folder and edit settings in `config.toml`
 
 step 3: run `hugo server` in your terminal
 
@@ -84,11 +75,15 @@ The `content-secondary` mount point is for secondary content section *(eg. colle
 
 ---
 
-## future plan
+## near future plan
 
-- define image size on config file
+- ~~content mount point options (config)~~ done
+- ~~define cover image size on config file~~ done
 - slideshow for gallery photo with some predefine layout
-- google analytic
+
+## later
+
+- google analytic, robot.txt, sitemap, etc...
 - collapsable section for disqus
 - share button (facebook, twitter, pinterest)
 - shortcode to insert image

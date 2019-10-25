@@ -28,6 +28,10 @@ paginate = 6
   description = "this is my only blog, I have never write and post anywhere else"
   tagline = "everything not art must be porn"
   googlefont = "https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600,600i&display=swap&subset=latin-ext,vietnamese"
+  mpPrimary = "content-primary" # mount point for primary content
+  mpSecondary = "content-secondary" # mount point for secondary content
+  bigCover = "1200x680" # image size for big cover image (home and single page)
+  smallCover = "640x640" # image size for small post cover image (post listing)
 
 # uncomment below line to enable tracking post date with git
 # enableGitInfo = true

@@ -7,9 +7,9 @@ hugo theme for photo gallery
 
 - require hugo 0.58 or later
 - use hugo module to mount content into site
-- best for photo gallry site/blog
-- fixed entry text width
-- almost setting predefined in config.toml
+- best for photo gallery site/blog
+- fixed entry text width, everything else is responsive
+- explain predefined settings in config.toml
 
 ---
 

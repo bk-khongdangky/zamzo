@@ -52,14 +52,12 @@
 	// position: relative;
 	.cover-title {
 		padding-top: 1rem;
-		text-align: center;
+		// text-align: center;
 		// position: absolute;
 		// top: 0; left: 0; right: 0; bottom: 0;
 		@include flex();
-		a {
-			display: block;
-			width: 100%;
-		}
+		a { color: black; }
+		.img-count { color: #ccc; }
 	}
 	img {
 		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */

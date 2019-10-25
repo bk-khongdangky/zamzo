@@ -2,22 +2,20 @@ baseURL = "/"
 languageCode = "en-us"
 title = "nsfw"
 theme = "mmm"
-
+# enable emoji 😍
 enableEmoji = true
-# section name automatic to menu
-# sectionPagesMenu = "main"
 # footnotes return link
 footnoteReturnLinkContents = "↩"
 footnoteAnchorPrefix = "fn"
 # chuyển list title về số ít (bỏ s)
 pluralizeListTitles = false
-# remove accent mark (loại bỏ dấu tiếng việt cho url)
+# remove accent mark
+# dấu-tiếng-việt to dau-tieng-viet
 removePathAccents = true
-# số bài hiển thị trên 1 trang
+# posts per page
 paginate = 6
-# giữ nguyên dấu tiếng việt cho taxonomy name
-# preserveTaxonomyNames = true
-# setting to use built-in code highlight
+
+# built-in code highlight settings
 # pygmentsCodefences = true
 # pygmentsUseClasses = true
 # pygmentsOptions = "linenos=table"
@@ -29,8 +27,6 @@ paginate = 6
   author = "khongdangky"
   description = "this is my only blog, I have never write and post anywhere else"
   tagline = "everything not art must be porn"
-# googlefont = "https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,700,700i&display=swap&subset=latin-ext,vietnamese"
-# googlefont = "https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap&subset=latin-ext,vietnamese"
   googlefont = "https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600,600i&display=swap&subset=latin-ext,vietnamese"
 
 # uncomment below line to enable tracking post date with git
@@ -41,16 +37,19 @@ paginate = 6
   date  = [":default", ":filename"]
   lastmod = [":fileModTime", ":default"]
 
+# edit this for your own post permalinks
 [permalinks]
-  blog = ":section/:year/:month/:slug/"
-  insp = ":sections/:slug/"
+  content-primary = "blog/:year/:month/:slug/"
+  content-secondary = "collective/:slug/"
+
+
 # home page menu
 [[menu.home]]
   name = "home"
   weight = 1
   url = "/"
 
-# main page menu
+# pages (section) menu
 [[menu.main]]
   name = "home"
   weight = 1
@@ -66,8 +65,7 @@ paginate = 6
   identifier = "categories"
   url = "/categories/"
 
-
-
+# footer menu
 [[menu.footer]]
   name = "Tags"
   weight = 30
@@ -84,7 +82,7 @@ paginate = 6
   identifier = "emoticon"
   url = "https://www.webfx.com/tools/emoji-cheat-sheet/"
 
-# config cho hugo lấy các bài liên quan (single post)
+# relate posts
 [related]
 threshold = 80.0
 includeNewer = true
@@ -102,19 +100,20 @@ toLower = false
   name = "date"
   weight = 10.0
 
+# setting to render sitemap
+# not very important
 [sitemap]
   changefreq = "weekly"
   filename = "sitemap.xml"
   priority = 0.5
 
+# settings for image processing
 [imaging]
-# better but slower resize quality
+# Better but slower resize quality
 resampleFilter = "lanczos"
 # Better JPEG quality setting. Default is 75.
 quality = 85
-# Default background color. 
-# Hugo will preserve transparency for target formats that supports it,
-# but will fall back to this color for JPEG.
+# Default jpg image background if it render from transparent images.
 bgColor = "#ffffff"
 
 # Use hugo module to mount content from local folder

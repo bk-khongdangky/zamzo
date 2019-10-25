@@ -18,7 +18,7 @@
 	
 	<div class="container">
 		<div class="insp-list">
-		{{ $s := "content-secondary" }}
+		{{ $s := site.Params.mpSecondary }}
 		{{ $p := first 6 (where site.RegularPages "Section" $s) }}
 		{{ range $p }}
 			{{ partial "cover-image-default.html" . }}

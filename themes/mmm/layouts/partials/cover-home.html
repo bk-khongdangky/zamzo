@@ -1,16 +1,15 @@
 <div id="100vh" class="home-cover">
-    {{ $b := where site.RegularPages "Section" "content-primary" }}
+    {{ $f := site.Params.mpPrimary }}
+    {{ $b := where site.RegularPages "Section" $f }}
     {{ range first 1 $b }}
 
     <div class="latest">
-        {{ with .Resources }}
         <!--{{/* with .GetMatch "{cover.*,*.jpg,*.png,*.jpeg}" */}}-->
-        {{ with .GetMatch "cover.*" }}
+        {{ with .Resources.GetMatch "cover.*" }}
         <!-- {{/* $cover := .Fill "900x500" | images.Filter (images.Brightness 10) */}} -->
-        {{ $cover := .Fill "1200x600" }}
+        {{ $cover := .Fill site.Params.bigCover }}
         {{ with $cover }}
         <div class="post-cover"><img src="{{ .Permalink }}" alt="{{ .Title }}" /></div>
-        {{ end }}
         {{ end }}
         {{ end }}
         <div id="hh1" class="container">
@@ -31,7 +30,7 @@
     </div>
 
     <div class="center blog-more">
-        <a href="/content-primary/">read more...</a>
+        <a href="/{{ $f }}/">read more...</a>
     </div>
 
 </div>

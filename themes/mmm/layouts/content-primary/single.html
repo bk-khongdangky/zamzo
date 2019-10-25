@@ -1,0 +1,51 @@
+
+
+{{ define "primary" }}
+{{ partial "vs100.html" . }}
+<div class="container">
+    <div class="center single-title">
+        <h2>{{ .Title }}</h2>
+    </div>
+    {{ partial "cover-image-single.html" . }}
+</div>
+{{ with .Content }}
+{{ partial "vs100.html" . }}
+<div class="single-primary">
+    <div class="container">
+        <div class="entry bigpad">
+            {{ . }}
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ partial "nav-post.html" . }}
+{{ end }}
+
+{{ define "secondary" }}
+{{ with .Resources.ByType "image" }}
+{{ $images := . }}
+{{ $cover := slice (.GetMatch "cover.*") }}
+{{ $display := $images | complement $cover }}
+<!-- only display this section if post has another images -->
+{{ with $display }}
+<section class="single-secondary">
+    {{ partial "vs100.html" . }}
+    <div class="container bigpad">
+        <div class="insp-list">
+            {{ range . }}
+            <div class="insp-src-image">
+                <a href="{{ .RelPermalink }}">
+                    {{ $i := .Fill site.Params.smallCover }}
+                    {{ with $i }}
+                    <img src="{{ .Permalink }}" alt="{{ .Title }}" />
+                    <p class="image-title">{{ .Title }}</p>
+                    {{ end }}
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
+{{ end }}

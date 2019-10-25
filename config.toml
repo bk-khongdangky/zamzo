@@ -122,9 +122,9 @@ bgColor = "#ffffff"
 # you can even use your github/gitlab repositories
 [module]
 [[module.mounts]]
-source = "../content/blog"
+source = "../content/kele"
 target = "content/content-primary"
 [[module.mounts]]
-source = "../content/insp"
+source = "../content/nhatnhanh"
 target = "content/content-secondary"
 

@@ -21,7 +21,7 @@
 		{{ $s := site.Params.mpSecondary }}
 		{{ $p := first 6 (where site.RegularPages "Section" $s) }}
 		{{ range $p }}
-			{{ partial "cover-image-default.html" . }}
+			{{ partial "cover-image-secondary.html" . }}
 		{{ end }}
 		</div>
 	</div>

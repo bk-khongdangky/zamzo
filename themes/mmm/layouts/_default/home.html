@@ -7,18 +7,29 @@
 {{ end }}
 
 {{ define "secondary" }}
+
 {{ partial "vs200.html" . }}
+
 <section class="section-secondary">
-    {{ with .Site.Params.tagline }}<div class="center tag-line">{{ . }}</div>{{ end }}
-    <div class="container">
-        <div class="insp-list">
-            {{ $p := first 6 (where site.RegularPages "Section" "content-secondary") }}
-            {{ range $p }}
-            {{ partial "cover-image-default.html" . }}
-            {{ end }}
-        </div>
-    </div>
-    <div class="center smore"><a href="/content-secondary/">more</a></div>
+
+	{{ with .Site.Params.tagline }}
+	<div class="center tag-line">{{ . }}</div>
+	{{ end }}
+	
+	<div class="container">
+		<div class="insp-list">
+		{{ $s := "content-secondary" }}
+		{{ $p := first 6 (where site.RegularPages "Section" $s) }}
+		{{ range $p }}
+			{{ partial "cover-image-default.html" . }}
+		{{ end }}
+		</div>
+	</div>
+	
+	<div class="center smore">
+		<a href="/{{ $s }}/">more</a>
+	</div>
+	
 </section>
 {{ end }}
 

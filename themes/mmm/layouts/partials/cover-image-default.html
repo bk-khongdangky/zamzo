@@ -1,11 +1,13 @@
 <div class="cover">
     <a href="{{ .RelPermalink }}">
-        {{ range first 1 (.Resources.ByType "image") }}
-        <!-- {{/* $cover := .Fill "500x500" | images.Filter (images.Grayscale) */}} -->
-        {{ $cover := .Fill site.Params.smallCover }}
-        {{ with $cover }}
+        {{ with .Resources.ByType "image" }}
+          {{ range first 1 . }}
+          <!-- {{/* $cover := .Fill "500x500" | images.Filter (images.Grayscale) */}} -->
+          {{ $cover := .Fill site.Params.smallCover }}
+            {{ with $cover }}
         <div class="cover-image"><img src="{{ .Permalink }}" alt="{{ .Title }}" /></div>
-        {{ end }}
+            {{ end }}
+          {{ end }}
         {{ else }}
         <div class="cover-image-default">
             <img src="/images/default-cover.jpeg" alt="{{ .Title }}" />

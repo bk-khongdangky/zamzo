@@ -7,6 +7,16 @@
 	@media(min-width: $hg) {
 		padding: 10rem 0;
 	}
+	& > figure {
+		margin: 2rem auto;
+		figcaption {
+			font-size: 80%;
+			font-style: italic;
+			color: #555;
+			text-align: center;
+			padding: .5rem 0;
+		}
+	}
 }
 // temporary for insp section
 .single-secondary {

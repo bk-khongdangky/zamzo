@@ -58,6 +58,9 @@ a {
         padding: 0.5rem;
     }
 }
+p:empty {
+    display: none;
+}
 
 
 @import "header";

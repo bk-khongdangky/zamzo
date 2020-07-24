@@ -6,6 +6,8 @@ $hg: 1500px;
 
 html {
     font: 18px/1.5 $f;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 a {
     text-decoration: none;

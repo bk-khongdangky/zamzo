@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "nsfw"
-theme = "mmm"
+theme = "zem"
 # enable emoji 😍
 enableEmoji = true
 # footnotes return link

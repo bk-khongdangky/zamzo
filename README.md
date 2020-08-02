@@ -1,4 +1,4 @@
-# zam
+# zamzo
 hugo theme for photo gallery
 
 ---
